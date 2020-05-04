@@ -1,0 +1,13 @@
+version: "2"
+services:
+  web:
+    build: .
+    image: ctfhub/base_web_nodejs_koa_xssbot
+    restart: always
+    ports:
+      - "8085:80"
+    # volumes:
+    #   - ./src:/home/bot
+    environment:
+      - FLAG=ctfhub{base_web_nodejs_koa_xssbot}
+      - DOMAIN_NAME=xss.dev.ctfhub.virzz.com
